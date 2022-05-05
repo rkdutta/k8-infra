@@ -7,3 +7,9 @@ patchesStrategicMerge:
 - patch-pod-identity.yaml
 commonLabels:
   what: testing
+patches: # customize the manifests during bootstrap
+  - target:
+      kind: Deployment
+      labelSelector: app.kubernetes.io/part-of=flux
+    patch: |
+            # strategic merge or JSON patch
