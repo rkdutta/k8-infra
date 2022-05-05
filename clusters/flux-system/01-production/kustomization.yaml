@@ -3,7 +3,7 @@ kind: Kustomization
 metadata:
   name: kustomize-controller
 namePrefix: prod-
-resources:
+bases:
 - ../kustomization.yaml
 commonLabels:
   env: production
