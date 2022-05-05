@@ -2,7 +2,6 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: testing-akv-connectivity-csi-driver
-  namespace: flux-system
 spec:
   containers:
   - name: busybox
