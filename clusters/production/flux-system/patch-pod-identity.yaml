@@ -23,6 +23,6 @@ spec:
         #   value: ""
         # - name: AZURE_CLIENT_SECRET
         #   value: key-flux-production
-        envFrom:
-        - secretRef:
-            name: prod-cluster-repo-public-key
+        # envFrom:
+        # - secretRef:
+        #     name: prod-cluster-repo-public-key
