@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
+- testing-akv-connectivity-csi-driver.yaml
 patchesStrategicMerge:
 - patch-pod-identity.yaml
 commonLabels:
