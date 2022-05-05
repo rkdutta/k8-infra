@@ -1,10 +1,11 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-metadata:
-  namespace: flux-system
+# apiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+# metadata:
+#   namespace: flux-system
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
 #namePrefix: prod-
 commonLabels:
   env: production
+  env2: production2
