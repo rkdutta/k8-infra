@@ -22,9 +22,6 @@ spec:
   interval: 10m0s
   path: ./clusters/production
   prune: true
-  # sourceRef:
-  #   kind: GitRepository
-  #   name: flux-system
   sourceRef:
     kind: GitRepository
-    name: prod-cluster-repo-public-key
+    name: flux-system
