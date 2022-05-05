@@ -5,6 +5,6 @@
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
-#namePrefix: prod-
+namePrefix: prod-
 commonLabels:
   env: production
