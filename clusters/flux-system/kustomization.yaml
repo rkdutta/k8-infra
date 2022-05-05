@@ -5,6 +5,8 @@ resources:
 - gotk-sync.yaml
 patchesStrategicMerge:
 - patch-pod-identity.yaml
+commonLabels:
+  aadpodidbinding: id-flux-system-pod-identity
 patches: # customize the manifests during bootstrap
   - target:
       kind: Deployment

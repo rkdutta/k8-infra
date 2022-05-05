@@ -4,4 +4,4 @@ namePrefix: dev-
 resources:
 - ../kustomization.yaml
 commonLabels:
-  aadpodidbinding: id-flux-system-pod-identity
+  env: dev
