@@ -2,7 +2,7 @@
 # kind: Kustomization
 # metadata:
 #   namespace: flux-system
-resources:
+bases:
 - gotk-components.yaml
 - gotk-sync.yaml
 namePrefix: prod-
