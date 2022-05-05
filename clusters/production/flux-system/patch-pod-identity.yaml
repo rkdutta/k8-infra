@@ -19,7 +19,7 @@ spec:
           value: msi
         - name: AZURE_TENANT_ID
           value: "69e8e187-e118-4955-b87e-42e37985b622"
-        # - name: AZURE_CLIENT_ID
-        #   value: 
+        - name: AZURE_CLIENT_ID
+           value: ""
         - name: AZURE_CLIENT_SECRET
           value: key-flux-production
