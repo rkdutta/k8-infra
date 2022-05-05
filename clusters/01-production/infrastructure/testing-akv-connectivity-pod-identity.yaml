@@ -1,0 +1,25 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testing-akv-connectivity-pod-identity
+  namespace: flux-system
+  labels:
+    aadpodidbinding: id-flux-system-pod-identity
+spec:
+  tolerations:
+  - key: "CriticalAddonsOnly"
+    operator: "Equal"
+    value: "true"
+    effect: "NoSchedule"
+  containers:
+  - name: nginx
+    image: k8s.gcr.io/nginx:latest
+    startupProbe:
+      exec:
+        command:
+        - wget
+        - "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net" 
+        - "--header" 
+        - "Metadata:true"
+      initialDelaySeconds: 1
+      periodSeconds: 5
