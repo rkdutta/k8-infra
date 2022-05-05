@@ -10,7 +10,7 @@ spec:
   ref:
     branch: main
   secretRef:
-    name: prod-cluster-repo-public-key
+    name: flux-system
   url: ssh://git@github.com/rkdutta/k8-infra
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
