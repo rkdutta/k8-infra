@@ -4,7 +4,7 @@ bases:
 - gotk-components.yaml
 - gotk-sync.yaml
 commonLabels:
-  env: staging
+  env: production
 patchesStrategicMerge:
 - patch-pod-identity.yaml
 patches: # customize the manifests during bootstrap
