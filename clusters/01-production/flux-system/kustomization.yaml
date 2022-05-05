@@ -8,4 +8,3 @@ resources:
 #namePrefix: prod-
 commonLabels:
   env: production
-  env2: production2
