@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notejam-deployment
+  labels:
+    app: notejam-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notejam-web
+      type: production
+      priorityclass: critical
+  template:
+    metadata:
+      labels:
+        app: notejam-web
+        type: production
+        priorityclass: critical
+    spec:
+      containers:
+      - name: notejam-web
+        image: privatecontainerregitry.azurecr.io/nginx:1.22
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

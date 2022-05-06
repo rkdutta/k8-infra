@@ -1,0 +1,50 @@
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: critical
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      priorityclass: critical
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: important
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      priorityclass: important      
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: high
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      priorityclass: high
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: medium
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      priorityclass: medium
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: low
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      priorityclass: low      
