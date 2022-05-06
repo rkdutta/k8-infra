@@ -1,0 +1,28 @@
+---
+# Configuring secure TLS for ingress is pending
+# managed idenity is configured and pod identity management is also configured
+# in production namespace; The TLS information specified is a placeholder here
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tls-ingress
+  namespace: production
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+      - https-notejam.com
+    secretName: notejam-tls
+  rules:
+  - host: https-notejam.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-service
+            port:
+              number: 80
