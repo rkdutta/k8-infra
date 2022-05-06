@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: notejam-web
-        image: privatecontainerregitry.azurecr.io/nginx:1.22
+        image: privatecontainerregitry.azurecr.io/notejam:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

@@ -19,18 +19,18 @@ data "azurerm_subnet" "vnet_spoke" {
 }
 
 resource "azurerm_kubernetes_cluster" "k8" {
-  name                          = "private-aks"
-  location                      = azurerm_resource_group.rg.location
-  resource_group_name           = azurerm_resource_group.rg.name
-  dns_prefix                    = "private-aks"
-  node_resource_group           = "MC_paid_private_aks"
-  public_network_access_enabled = true
-  //private_cluster_enabled             = true
-  sku_tier                          = "Free"
-  azure_policy_enabled              = true
-  role_based_access_control_enabled = true
-  //private_cluster_public_fqdn_enabled = false
-  //private_dns_zone_id                 = "System"
+  name                                = "private-aks"
+  location                            = azurerm_resource_group.rg.location
+  resource_group_name                 = azurerm_resource_group.rg.name
+  dns_prefix                          = "private-aks"
+  node_resource_group                 = "MC_paid_private_aks"
+  public_network_access_enabled       = false
+  private_cluster_enabled             = true
+  sku_tier                            = "Free"
+  azure_policy_enabled                = true
+  role_based_access_control_enabled   = true
+  private_cluster_public_fqdn_enabled = false
+  private_dns_zone_id                 = "System"
 
 
   azure_active_directory_role_based_access_control {
@@ -45,16 +45,16 @@ resource "azurerm_kubernetes_cluster" "k8" {
   }
 
   default_node_pool {
-    name       = "controlplane"
-    node_count = 1
-    # min_count = 1
-    # max_count = 1
+    name = "controlplane"
+    //node_count = 1
+    min_count                    = 2
+    max_count                    = 3
     vm_size                      = "Standard_B2s"
     os_disk_size_gb              = 30
-    enable_auto_scaling          = false
+    enable_auto_scaling          = true
     type                         = "VirtualMachineScaleSets"
-    zones                        = []
-    node_taints                  = []
+    zones                        = [1, 2, 3]
+    node_taints                  = ["CriticalAddonsOnly=true:NoSchedule"]
     vnet_subnet_id               = data.azurerm_subnet.vnet_spoke["NodepoolSubnet"].id
     only_critical_addons_enabled = true
   }
@@ -68,8 +68,8 @@ resource "azurerm_kubernetes_cluster" "k8" {
     service_cidr       = "10.0.0.0/16"
 
     load_balancer_sku = "standard"
-    outbound_type     = "loadBalancer"
-    //outbound_type = "userDefinedRouting"
+    #outbound_type     = "loadBalancer"
+    outbound_type = "userDefinedRouting"
   }
 
   identity {
@@ -89,17 +89,19 @@ resource "azurerm_kubernetes_cluster" "k8" {
 
 }
 
-/*
+
 resource "azurerm_kubernetes_cluster_node_pool" "k8_cluster_node_pool" {
   name                  = "worker1"
   kubernetes_cluster_id = azurerm_kubernetes_cluster.k8.id
   vm_size               = "Standard_B2s"
-  node_count            = 0
-  vnet_subnet_id        = data.azurerm_subnet.vnet_spoke["NodepoolSubnet"].id
-  os_disk_size_gb       = 30
-  enable_auto_scaling   = false
-  zones                 = []
-  node_taints           = []
+  //node_count            = 0
+  min_count           = 2
+  max_count           = 3
+  vnet_subnet_id      = data.azurerm_subnet.vnet_spoke["NodepoolSubnet"].id
+  os_disk_size_gb     = 30
+  enable_auto_scaling = true
+  zones               = [1, 2, 3]
+  node_taints         = []
 
   tags = {
     tier = "Production",
@@ -111,7 +113,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "k8_cluster_node_pool" {
     azurerm_virtual_network.vnet_spoke
   ]
 }
-*/
+
 
 //temporary block as it is in public review
 //local user should have manager identity operator permission
