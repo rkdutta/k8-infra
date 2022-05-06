@@ -5,7 +5,7 @@ metadata:
   labels:
     app: notejam-web
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: notejam-web
@@ -20,7 +20,26 @@ spec:
     spec:
       containers:
       - name: notejam-web
-        image: privatecontainerregitry.azurecr.io/notejam:latest
+        image: privatecontainerregitry.azurecr.io/notejam:1.0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/app"
+          name: volume
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        readinessProbe:
+          exec:
+            command:
+            - cat
+            - /app/db.log
+          initialDelaySeconds: 5
+          periodSeconds: 10
+    volumes:
+    - name: volume
+      persistentVolumeClaim:
+        claimName: azure-managed-disk

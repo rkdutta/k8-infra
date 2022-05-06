@@ -12,32 +12,25 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: network-policy-web
+  name: network-policy-app
   namespace: production
 spec:
   podSelector:
     matchLabels:
-      tier: web
+      app: notejam-web
+      type: production
   policyTypes:
     - Ingress
     - Egress
   ingress:
     - from:
-        - namespaceSelector:
-            matchLabels:
-              project: myproject
-        - podSelector:
-            matchLabels:
-              role: frontend
       ports:
         - protocol: TCP
-          port: 6379
+          port: 8080
   egress:
     - to:
-        - namespaceSelector:
-            matchLabels:
-              project: myproject
+        - ipBlock:
+            cidr: 10.0.0.0/24 # DB server IP to be parameterized
       ports:
         - protocol: TCP
-          port: 3306
-
+          port: 3306 # DB server port

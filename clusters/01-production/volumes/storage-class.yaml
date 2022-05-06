@@ -13,8 +13,8 @@
   parameters:
     skuName: Standard_LRS
   provisioner: file.csi.azure.com
-  reclaimPolicy: Delete
-  volumeBindingMode: Immediate
+  reclaimPolicy: Retain
+  volumeBindingMode: WaitForFirstConsumer
 ---
   allowVolumeExpansion: true
   apiVersion: storage.k8s.io/v1
@@ -30,8 +30,8 @@
   parameters:
     skuName: Standard_LRS
   provisioner: file.csi.azure.com
-  reclaimPolicy: Delete
-  volumeBindingMode: Immediate
+  reclaimPolicy: Retain
+  volumeBindingMode: WaitForFirstConsumer
 ---
   allowVolumeExpansion: true
   apiVersion: storage.k8s.io/v1
@@ -47,8 +47,8 @@
   parameters:
     skuName: Premium_LRS
   provisioner: file.csi.azure.com
-  reclaimPolicy: Delete
-  volumeBindingMode: Immediate
+  reclaimPolicy: Retain
+  volumeBindingMode: WaitForFirstConsumer
 ---
   allowVolumeExpansion: true
   apiVersion: storage.k8s.io/v1
@@ -65,8 +65,8 @@
   parameters:
     skuName: Premium_LRS
   provisioner: file.csi.azure.com
-  reclaimPolicy: Delete
-  volumeBindingMode: Immediate
+  reclaimPolicy: Retain
+  volumeBindingMode: WaitForFirstConsumer
 ---  
   allowVolumeExpansion: true
   apiVersion: storage.k8s.io/v1
@@ -81,7 +81,7 @@
   parameters:
     skuname: StandardSSD_LRS
   provisioner: disk.csi.azure.com
-  reclaimPolicy: Delete
+  reclaimPolicy: Retain
   volumeBindingMode: WaitForFirstConsumer
 ---
   allowVolumeExpansion: true
@@ -97,7 +97,7 @@
     kind: Managed
     storageaccounttype: StandardSSD_LRS
   provisioner: disk.csi.azure.com
-  reclaimPolicy: Delete
+  reclaimPolicy: Retain
   volumeBindingMode: WaitForFirstConsumer
 ---  
   allowVolumeExpansion: true
@@ -111,7 +111,7 @@
   parameters:
     skuname: StandardSSD_LRS
   provisioner: disk.csi.azure.com
-  reclaimPolicy: Delete
+  reclaimPolicy: Retain
   volumeBindingMode: WaitForFirstConsumer
 ---  
   allowVolumeExpansion: true
@@ -125,7 +125,7 @@
   parameters:
     skuname: Premium_LRS
   provisioner: disk.csi.azure.com
-  reclaimPolicy: Delete
+  reclaimPolicy: Retain
   volumeBindingMode: WaitForFirstConsumer
 ---  
   allowVolumeExpansion: true
@@ -141,5 +141,5 @@
     kind: Managed
     storageaccounttype: Premium_LRS
   provisioner: disk.csi.azure.com
-  reclaimPolicy: Delete
+  reclaimPolicy: Retain
   volumeBindingMode: WaitForFirstConsumer
