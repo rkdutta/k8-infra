@@ -42,7 +42,7 @@ resource "azurerm_kubernetes_cluster" "k8" {
 
   auto_scaler_profile {
     scan_interval = "60s"
-  }
+  } 
 
   default_node_pool {
     name = "controlplane"
