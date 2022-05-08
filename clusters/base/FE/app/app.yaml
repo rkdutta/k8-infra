@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notejam
+spec:
+  replicas: 1 #default
+  selector:
+    matchLabels:
+      app: notejam
+  template:
+    metadata:
+      labels:
+        app: notejam
+    spec:
+      containers:
+      - name: notejam-container
+        image: privatecontainerregitry.azurecr.io/notejam:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - mountPath: "/app"
+          name: pv-volume
+        - mountPath: "/app"
+          name: app-config-volume
+      volumes:
+      - name: pv-volume
+        emptyDir: {} #configured for local run
+      - name: app-config-volume
+        configMap:
+          name: config.properties

@@ -1,0 +1,3 @@
+resources:
+- ingress-controller.yaml
+- ingress.yaml

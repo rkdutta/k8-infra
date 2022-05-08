@@ -1,0 +1,12 @@
+resources:
+- ./app
+- ./autoscaling
+- ./volumes
+- ./csi
+- ./ingress
+- ./networkpolicy
+- ./policies
+- ./priority-class
+- ./quota
+- ./runtime-class
+
