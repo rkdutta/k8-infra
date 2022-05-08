@@ -62,6 +62,7 @@
 |   |   |   |   +--- replica-patch.yaml
 |   |   |   |   +--- volume-patch.yaml
 |   |   |   +--- kustomization.yaml
+|   |   |   +--- patch-gotk-sync.yaml
 |   |   +--- 02-stage
 |   |   |   +--- BE
 |   |   |   |   +--- kustomization.yaml
@@ -73,6 +74,7 @@
 |   |   |   |   +--- replica-patch.yaml
 |   |   |   |   +--- volume-patch.yaml
 |   |   |   +--- kustomization.yaml
+|   |   |   +--- patch-gotk-sync.yaml
 |   |   +--- 03-dev
 |   |   |   +--- BE
 |   |   |   |   +--- kustomization.yaml
@@ -84,6 +86,7 @@
 |   |   |   |   +--- replica-patch.yaml
 |   |   |   |   +--- volume-patch.yaml
 |   |   |   +--- kustomization.yaml
+|   |   |   +--- patch-gotk-sync.yaml
 |   |   +--- 04-test
 |   |   |   +--- BE
 |   |   |   |   +--- kustomization.yaml
@@ -95,5 +98,6 @@
 |   |   |   |   +--- replica-patch.yaml
 |   |   |   |   +--- volume-patch.yaml
 |   |   |   +--- kustomization.yaml
+|   |   |   +--- patch-gotk-sync.yaml
 
 ```
