@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: app-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: StandardSSD_LRS
+  resources:
+    requests:
+      storage: 1Gi

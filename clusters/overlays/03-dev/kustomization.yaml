@@ -1,0 +1,5 @@
+bases:
+- ./FE/
+- ./BE/
+
+namePrefix: dev-
