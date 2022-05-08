@@ -1,5 +1,0 @@
-bases:
-- ./FE/
-- ./BE/
-
-namePrefix: test-

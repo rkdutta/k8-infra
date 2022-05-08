@@ -3,5 +3,4 @@ bases:
 - ./FE/
 - ./BE/
 
-
-namePrefix: prod-
+namePrefix: test-

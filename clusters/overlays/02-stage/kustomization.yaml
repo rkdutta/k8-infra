@@ -1,4 +1,5 @@
 bases:
+- ../../base/flux-system
 - ./FE/
 - ./BE/
 

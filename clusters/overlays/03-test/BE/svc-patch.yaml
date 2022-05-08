@@ -1,7 +1,0 @@
-- op: add
-  path: /metadata/annotations
-  value:
-    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
-- op: replace
-  path: /spec/externalName
-  value: someDB.example.com #update the DB URL here

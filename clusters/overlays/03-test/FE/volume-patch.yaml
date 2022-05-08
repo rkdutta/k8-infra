@@ -1,9 +1,0 @@
-- op: replace
-  path: /spec/template/spec/volumes
-  value:
-  - name: pv-volume
-    persistentVolumeClaim:
-      claimName: app-pvc
-  - name: app-config-volume
-    configMap:
-      name: config.properties

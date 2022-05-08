@@ -16,11 +16,6 @@
 |   |   |   +--- csi
 |   |   |   |   +--- kustomization.yaml
 |   |   |   |   +--- SecretProviderClass.yaml
-|   |   |   +--- flux-system
-|   |   |   |   +--- gotk-components.yaml
-|   |   |   |   +--- gotk-sync.yaml
-|   |   |   |   +--- kustomization.yaml
-|   |   |   |   +--- patch-pod-identity.yaml
 |   |   |   +--- ingress
 |   |   |   |   +--- ingress-controller.yaml
 |   |   |   |   +--- ingress.yaml
@@ -50,6 +45,11 @@
 |   |   |   +--- volumes
 |   |   |   |   +--- kustomization.yaml
 |   |   |   |   +--- storage-class.yaml
+|   |   +--- flux-system
+|   |   |   +--- gotk-components.yaml
+|   |   |   +--- gotk-sync.yaml
+|   |   |   +--- kustomization.yaml
+|   |   |   +--- patch-pod-identity.yaml
 |   +--- overlays
 |   |   +--- 01-production
 |   |   |   +--- BE
@@ -84,7 +84,7 @@
 |   |   |   |   +--- replica-patch.yaml
 |   |   |   |   +--- volume-patch.yaml
 |   |   |   +--- kustomization.yaml
-|   |   +--- 03-test
+|   |   +--- 04-test
 |   |   |   +--- BE
 |   |   |   |   +--- kustomization.yaml
 |   |   |   |   +--- svc-patch.yaml
