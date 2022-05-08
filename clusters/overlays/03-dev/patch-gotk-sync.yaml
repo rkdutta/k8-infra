@@ -5,5 +5,5 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./clusters/03-dev
+  path: ./clusters/overlays/03-dev
   prune: true
