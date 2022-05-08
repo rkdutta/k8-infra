@@ -4,3 +4,5 @@ bases:
 - ./BE/
 
 namePrefix: test-
+patchesStrategicMerge:
+- patch-gotk-sync.yaml

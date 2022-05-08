@@ -4,3 +4,5 @@ bases:
 - ./BE/
 
 namePrefix: stage-
+patchesStrategicMerge:
+- patch-gotk-sync.yaml

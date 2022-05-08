@@ -3,5 +3,6 @@ bases:
 - ./FE/
 - ./BE/
 
-
 namePrefix: prod-
+patchesStrategicMerge:
+- patch-gotk-sync.yaml
