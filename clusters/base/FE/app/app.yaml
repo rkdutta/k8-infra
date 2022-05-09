@@ -12,12 +12,26 @@ spec:
       labels:
         app: notejam
     spec:
+      initContainers:
+      - name: init-myservice
+        image: busybox:1.28
+        command: ["sh","-c","curl db-service"]
       containers:
       - name: notejam-container
         image: privatecontainerregitry.azurecr.io/notejam:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 20
         volumeMounts:
         - mountPath: "/app"
           name: pv-volume
