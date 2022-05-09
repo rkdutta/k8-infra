@@ -59,6 +59,7 @@
 |   |   |   +--- FE
 |   |   |   |   +--- config.properties
 |   |   |   |   +--- kustomization.yaml
+|   |   |   |   +--- priority-patch.yaml
 |   |   |   |   +--- pvc.yaml
 |   |   |   |   +--- replica-patch.yaml
 |   |   |   |   +--- volume-patch.yaml
@@ -71,6 +72,7 @@
 |   |   |   +--- FE
 |   |   |   |   +--- config.properties
 |   |   |   |   +--- kustomization.yaml
+|   |   |   |   +--- priority-patch.yaml
 |   |   |   |   +--- pvc.yaml
 |   |   |   |   +--- replica-patch.yaml
 |   |   |   |   +--- volume-patch.yaml
@@ -83,6 +85,7 @@
 |   |   |   +--- FE
 |   |   |   |   +--- config.properties
 |   |   |   |   +--- kustomization.yaml
+|   |   |   |   +--- priority-patch.yaml
 |   |   |   |   +--- pvc.yaml
 |   |   |   |   +--- replica-patch.yaml
 |   |   |   |   +--- volume-patch.yaml
@@ -95,6 +98,7 @@
 |   |   |   +--- FE
 |   |   |   |   +--- config.properties
 |   |   |   |   +--- kustomization.yaml
+|   |   |   |   +--- priority-patch.yaml
 |   |   |   |   +--- pvc.yaml
 |   |   |   |   +--- replica-patch.yaml
 |   |   |   |   +--- volume-patch.yaml
