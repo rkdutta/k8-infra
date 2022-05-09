@@ -22,6 +22,7 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+          name: http
         readinessProbe:
           tcpSocket:
             port: 8080
