@@ -6,3 +6,7 @@ bases:
 namePrefix: prod-
 patchesStrategicMerge:
 - patch-gotk-sync.yaml
+
+commonLabels:
+  priorityclass: critical
+  tier: production
