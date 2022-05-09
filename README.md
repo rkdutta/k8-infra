@@ -10,6 +10,7 @@
 |   |   |   +--- app
 |   |   |   |   +--- app.yaml
 |   |   |   |   +--- kustomization.yaml
+|   |   |   |   +--- service.yaml
 |   |   |   +--- autoscaling
 |   |   |   |   +--- hpa.yaml
 |   |   |   |   +--- kustomization.yaml
