@@ -18,7 +18,6 @@ spec:
   podSelector:
     matchLabels:
       app: notejam-web
-      type: production
   policyTypes:
     - Ingress
     - Egress

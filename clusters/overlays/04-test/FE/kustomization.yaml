@@ -8,6 +8,7 @@ namePrefix: FE-
 
 patchesStrategicMerge:
 - replica-patch.yaml
+- priority-patch.yaml
 
 configMapGenerator:
 - name: config.properties

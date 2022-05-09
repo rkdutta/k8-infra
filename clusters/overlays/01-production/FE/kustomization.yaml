@@ -8,6 +8,7 @@ namePrefix: FE-
 
 patchesStrategicMerge:
 - replica-patch.yaml
+- priority-patch.yaml
 
 configMapGenerator:
 - name: config.properties
@@ -21,3 +22,6 @@ patchesJson6902:
     kind: Deployment
     name: notejam
   path: volume-patch.yaml
+
+commonLabels:
+  tier: production
