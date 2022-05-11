@@ -1,0 +1,4 @@
+resources:
+- namespace-compute-resources.yaml
+- object-counts.yaml
+- limits.yaml

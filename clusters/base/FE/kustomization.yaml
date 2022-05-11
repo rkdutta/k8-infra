@@ -7,6 +7,6 @@ resources:
 - ./networkpolicy
 - ./policies
 - ./priority-class
-- ./quota
+- ./quotaAndLimits
 - ./runtime-class
 
