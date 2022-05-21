@@ -1,0 +1,6 @@
+---
+resources:
+- ./jenkins.yaml
+- ./permission.yaml
+
+namespace: 1-jenkins

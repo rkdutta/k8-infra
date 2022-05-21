@@ -1,0 +1,7 @@
+---
+resources:
+- ./pvc.yaml
+- ./container-registry.yaml
+- ./test.yaml
+
+namespace: 4-container-registry
