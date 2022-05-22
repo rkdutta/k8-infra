@@ -7,4 +7,4 @@ namespace: 5-monitoring
 
 patchesStrategicMerge:
 - ./service-patch.yaml
-#- ./metic-server-patch.yaml
+- ./metic-server-patch.yaml
