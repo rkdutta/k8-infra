@@ -1,0 +1,10 @@
+---
+resources:
+- ./dashboard.yaml
+- ./metric-server-ha.yaml
+
+namespace: 5-monitoring
+
+patchesStrategicMerge:
+- ./service-patch.yaml
+#- ./metic-server-patch.yaml
