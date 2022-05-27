@@ -17,6 +17,33 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
+  name: kubernetes-dashboard-user
+
+---
+apiVersion: v1
+kind: Secret
+type: kubernetes.io/service-account-token
+metadata:
+  name: kubernetes-dashboard-user-token
+  annotations:
+    kubernetes.io/service-account.name: "kubernetes-dashboard-user"
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: kubernetes-dashboard-user-permission
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: view
+subjects:
+- kind: ServiceAccount
+  name: kubernetes-dashboard-user
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
   labels:
     k8s-app: kubernetes-dashboard
   name: kubernetes-dashboard
@@ -137,7 +164,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: kubernetes-dashboard
-  
+
 
 ---
 
@@ -152,7 +179,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: kubernetes-dashboard
-  
+
 
 ---
 
@@ -187,6 +214,7 @@ spec:
           args:
             - --auto-generate-certificates
             - --namespace=$(POD_NAMESPACE)
+            #- --enable-skip-login
             # Uncomment the following line to manually specify Kubernetes API server Host
             # If not specified, Dashboard will attempt to auto discover the API server and connect
             # to it. Uncomment only if the default does not work.

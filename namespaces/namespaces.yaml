@@ -2,29 +2,29 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  creationTimestamp: null
   name: 1-jenkins
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  creationTimestamp: null
   name: 2-flux-system
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  creationTimestamp: null
   name: 3-argocd-system
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  creationTimestamp: null
   name: 4-container-registry
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  creationTimestamp: null
-  name: 5-monitoring
+  name: 5-monitoring-metric-server
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: 6-monitoing-prometheus

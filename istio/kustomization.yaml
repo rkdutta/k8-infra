@@ -1,0 +1,8 @@
+---
+resources:
+- ./namespaces.yaml
+- ./istio-config.yaml
+- ./strict.yaml
+- ./kiali.yaml
+
+namespace: 7-istio-system

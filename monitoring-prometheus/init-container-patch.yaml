@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-prometheus-stack-server
+spec:
+  template:
+    spec:
+      containers:
+      - name: init-permission
+        image: debian:stable
+        command: ["/bin/chmod","-R","777","/data"]
+  # initContainers:
+  #     - name: "init-datapath"
+  #       image: debian:stable
+  #       command: ["chown", "-R", "65534:65534", "/data"]
+  #       command: ["/bin/chmod","-R","777","/data"]
+  #       volumeMounts:
+  #       - mountPath: /etc/config
+  #         name: config-volume
+  #       - mountPath: /data
+  #         name: storage-volume

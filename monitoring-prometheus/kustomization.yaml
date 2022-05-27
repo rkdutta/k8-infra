@@ -1,0 +1,18 @@
+---
+resources:
+- ./pv.yaml
+
+namespace: 6-monitoing-prometheus
+
+#patchesStrategicMerge:
+#- ./init-container-patch.yaml
+
+helmCharts:
+- name: prometheus
+  repo: https://prometheus-community.github.io/helm-charts
+  version: 35.3.1
+  releaseName: kube-prometheus-stack
+  namespace: 6-monitoing-prometheus
+- name: grafana
+  repo: https://grafana.github.io/helm-charts
+  namespace: 6-monitoing-prometheus
