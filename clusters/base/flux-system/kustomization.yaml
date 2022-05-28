@@ -1,8 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-bases:
+resources:
 - gotk-components.yaml
 - gotk-sync.yaml
+#namespace: flux-system
 
-patchesStrategicMerge:
-- patch-pod-identity.yaml
+# patchesStrategicMerge:
+# - patch-pod-identity.yaml
