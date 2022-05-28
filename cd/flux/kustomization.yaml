@@ -1,4 +1,0 @@
-bases:
-- ../../clusters/base/flux-system
-
-namespace: flux-system
