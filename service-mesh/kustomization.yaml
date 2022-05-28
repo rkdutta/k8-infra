@@ -1,3 +1,4 @@
 resources:
 - ./dp01.yaml
+- ./namespaces.yaml
 namespace: demo
