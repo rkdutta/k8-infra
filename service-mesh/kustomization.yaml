@@ -1,5 +1,1 @@
-# bases:
-# - ../../cd/flux-system
-resources:
-- ./flux-system/gotk-sync-service-mesh.yaml
-- ./dp01.yaml
+namespace: demo
