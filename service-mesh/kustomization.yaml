@@ -2,4 +2,4 @@
 # - ../../cd/flux-system
 resources:
 - ./flux-system/gotk-sync-service-mesh.yaml
-- ./*.yaml
+- ./dp01.yaml
