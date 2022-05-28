@@ -3,14 +3,11 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
   name: traefik
-  #namespace: traefik
+  namespace: traefik
 spec:
   interval: 1m0s
   url: https://helm.traefik.io/traefik
-  install:
-    createNamespace: true
-  targetNamespace: traefik
-
+  
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
