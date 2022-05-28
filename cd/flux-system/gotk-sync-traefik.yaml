@@ -7,6 +7,8 @@ metadata:
 spec:
   interval: 1m0s
   url: https://helm.traefik.io/traefik
+  install:
+    createNamespace: true
 
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
