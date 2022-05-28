@@ -4,4 +4,4 @@ resources:
 - gotk-components.yaml
 - gotk-sync.yaml
 
-namespace: 01-base-flux-system
+namespace: 01-flux-system
