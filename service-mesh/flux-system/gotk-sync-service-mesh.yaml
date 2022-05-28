@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./service-mesh
+  path: ./service-mesh/istio
   prune: true
   sourceRef:
     kind: GitRepository
