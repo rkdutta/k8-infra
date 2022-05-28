@@ -1,0 +1,4 @@
+# bases:
+# - ../../cd/flux-system
+resources:
+- ./flux-system/gotk-sync-service-mesh.yaml
