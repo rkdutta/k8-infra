@@ -19,7 +19,7 @@ metadata:
   annotations:
     meta.helm.sh/release-name: istio-base
   labels:
-    app.kubernetes.io/managed-by: helm
+    app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: istio
 spec:
   releaseName: istio-base
