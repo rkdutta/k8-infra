@@ -21,11 +21,9 @@ metadata:
 spec:
   releaseName: istio-base
   install:
-    remediation:
-      retries: 3
+    crds: Create
   upgrade:
-    remediation:
-      retries: 3
+    crds: CreateReplace
   chart:
     spec:
       chart: base
