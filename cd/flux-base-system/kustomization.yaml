@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
 - namespaces.yaml
 - gotk-components.yaml
-- gotk-sync.yaml
+#- gotk-sync.yaml
 #- gotk-sync-service-mesh.yaml
 #- gotk-sync-traefik.yaml
