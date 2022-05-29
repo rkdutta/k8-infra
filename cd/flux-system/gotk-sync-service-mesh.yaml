@@ -17,7 +17,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: istio/base
+      chart: base
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
@@ -34,7 +34,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: istio/gateway
+      chart: gateway
       reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
