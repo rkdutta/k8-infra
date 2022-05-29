@@ -15,6 +15,7 @@ metadata:
   name: istio-base
   namespace: istio-system
 spec:
+  releaseName: istio-base
   install:
     remediation:
       retries: 3
