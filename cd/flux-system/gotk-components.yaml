@@ -4989,7 +4989,6 @@ rules:
   - '*'
 - apiGroups:
   - notification.toolkit.fluxcd.io
-  - alerts.notification.toolkit.fluxcd.io
   resources:
   - '*'
   verbs:
