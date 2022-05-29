@@ -29,7 +29,7 @@ spec:
       retries: 3
   chart:
     spec:
-      #version: "${version}"
+      version: 1.13.4
       chart: base
       sourceRef:
         kind: HelmRepository
