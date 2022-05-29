@@ -22,7 +22,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: istio
-      # version: 9.18.2
   interval: 1m0s
 
 ---
@@ -39,5 +38,4 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: istio
-      # version: 9.18.2
   interval: 1m0s
