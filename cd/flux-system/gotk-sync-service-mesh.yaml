@@ -16,7 +16,7 @@ kind: HelmRelease
 metadata:
   name: istio-base
   namespace: istio-system
-  annotation:
+  annotations:
     meta.helm.sh/release-name: istio-base
   labels:
     app.kubernetes.io/managed-by: helm
