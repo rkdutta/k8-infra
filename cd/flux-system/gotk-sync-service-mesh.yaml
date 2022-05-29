@@ -1,13 +1,26 @@
 ---
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
 metadata:
-  name: flux-system-service-mesh-istio
-  namespace: flux-system
+  name: istio
+  namespace: istio-system
 spec:
   interval: 1m0s
-  path: ./service-mesh
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
+  url: https://istio-release.storage.googleapis.com/charts
+
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: istio-base
+  namespace: istio-system
+spec:
+  chart:
+    spec:
+      chart: istio/base
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: istio
+      # version: 9.18.2
+  interval: 1m0s
