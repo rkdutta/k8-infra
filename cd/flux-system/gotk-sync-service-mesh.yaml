@@ -6,7 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/part-of: istio
 spec:
-  interval: 1h0m0s
+  interval: 0h0m10s
   url: https://istio-release.storage.googleapis.com/charts
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
