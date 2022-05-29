@@ -15,6 +15,12 @@ metadata:
   name: istio-base
   namespace: istio-system
 spec:
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
   chart:
     spec:
       chart: base
