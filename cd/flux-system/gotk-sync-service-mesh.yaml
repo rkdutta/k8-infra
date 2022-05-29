@@ -10,33 +10,33 @@ spec:
   interval: 1m0s
   url: https://istio-release.storage.googleapis.com/charts
 
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: istio-base
-  namespace: istio-system
-  labels:
-    app.kubernetes.io/part-of: istio
-spec:
-  releaseName: istio-base
-  install:
-    crds: Create
-    remediation:
-      retries: 3
-  upgrade:
-    crds: CreateReplace
-    remediation:
-      retries: 3
-  chart:
-    spec:
-      chart: base
-      reconcileStrategy: ChartVersion
-      sourceRef:
-        kind: HelmRepository
-        name: istio
-        namespace: istio-system
-  interval: 1m0s
+# ---
+# apiVersion: helm.toolkit.fluxcd.io/v2beta1
+# kind: HelmRelease
+# metadata:
+#   name: istio-base
+#   namespace: istio-system
+#   labels:
+#     app.kubernetes.io/part-of: istio
+# spec:
+#   releaseName: istio-base
+#   install:
+#     crds: Create
+#     remediation:
+#       retries: 3
+#   upgrade:
+#     crds: CreateReplace
+#     remediation:
+#       retries: 3
+#   chart:
+#     spec:
+#       chart: base
+#       reconcileStrategy: ChartVersion
+#       sourceRef:
+#         kind: HelmRepository
+#         name: istio
+#         namespace: istio-system
+#   interval: 1m0s
 
 # ---
 # apiVersion: helm.toolkit.fluxcd.io/v2beta1
