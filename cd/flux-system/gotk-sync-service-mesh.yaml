@@ -4,6 +4,8 @@ kind: HelmRepository
 metadata:
   name: istio
   namespace: istio-system
+  labels:
+    app.kubernetes.io/part-of: istio
 spec:
   interval: 1m0s
   url: https://istio-release.storage.googleapis.com/charts
@@ -14,6 +16,8 @@ kind: HelmRelease
 metadata:
   name: istio-base
   namespace: istio-system
+  labels:
+    app.kubernetes.io/part-of: istio
 spec:
   releaseName: istio-base
   install:
