@@ -1,7 +1,2 @@
 bases:
 - ../../../../../.templates/ci
-
-namePrefix: prod-
-
-commonLabels:
-  tier: production
