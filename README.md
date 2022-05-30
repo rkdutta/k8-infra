@@ -106,3 +106,4 @@
 |   |   |   +--- patch-gotk-sync.yaml
 
 ```
+flux bootstrap github --owner=rkdutta --repository=k8-infra --personal --path=cd/base
