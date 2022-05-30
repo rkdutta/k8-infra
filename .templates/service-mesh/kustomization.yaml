@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
 - namespaces.yaml
 - gotk-sync-service-mesh.yaml
-- mTLS-PERMISSIVE.yaml
+- mTLS-STRICT.yaml
