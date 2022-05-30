@@ -1,6 +1,6 @@
 bases:
 - ./ci/
-- ./serice-mesh/
+#- ./serice-mesh/
 namePrefix: prod-
 commonLabels:
   tier: production
