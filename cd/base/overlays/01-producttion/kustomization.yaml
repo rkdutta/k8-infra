@@ -1,6 +1,10 @@
+# bases:
+# - ./ci/
+# - ./service-mesh/
 bases:
-- ./ci/
-- ./service-mesh/
+- ../../../../../.templates/service-mesh
+- ../../../../../.templates/ci
+
 #namePrefix: prod-
 commonLabels:
   tier: production
