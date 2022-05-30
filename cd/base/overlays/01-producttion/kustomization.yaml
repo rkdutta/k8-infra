@@ -2,8 +2,8 @@
 # - ./ci/
 # - ./service-mesh/
 bases:
-- ../../../../../.templates/service-mesh
-- ../../../../../.templates/ci
+- ../../../../.templates/service-mesh
+- ../../../../.templates/ci
 
 #namePrefix: prod-
 commonLabels:
