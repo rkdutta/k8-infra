@@ -20,7 +20,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m0s
-  path: ./cd/base/flux-system
+  path: ./cd/base
   prune: true
   sourceRef:
     kind: GitRepository
