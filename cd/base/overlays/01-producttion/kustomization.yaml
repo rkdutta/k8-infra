@@ -4,3 +4,6 @@ bases:
 #namePrefix: prod-
 commonLabels:
   tier: production
+
+commonAnnotations:
+  istio-injection: enabled
