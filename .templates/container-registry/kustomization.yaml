@@ -4,4 +4,4 @@ resources:
 - ./pvc.yaml
 - ./container-registry.yaml
 
-namespace: 4-container-registry
+namespace: 04-container-registry
