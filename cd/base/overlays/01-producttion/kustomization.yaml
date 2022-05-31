@@ -1,11 +1,8 @@
-# bases:
-# - ./ci/
-# - ./service-mesh/
 bases:
 - ../../../../.templates/service-mesh
 - ../../../../.templates/ci
 
-#namePrefix: prod-
+namePrefix: prod-
 commonLabels:
   tier: production
   istio-injection: enabled
