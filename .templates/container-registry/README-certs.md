@@ -1,7 +1,7 @@
 ```
 flux bootstrap github --owner rkdutta --repository k8-infra --private --path ./cd/base
 ```
-# make directories
+  # make directories
 ```
 mkdir registry
 mkdir registry/auth
