@@ -1,5 +1,14 @@
 ```
 flux bootstrap github --owner rkdutta --repository k8-infra --private --path ./cd/base
+
+
+/etc/docker/
+├── certs.d
+│   └── container-registry:5000
+│       └── container-registry-ca.crt
+└── key.json
+
+
 ```
   # make directories
 ```
