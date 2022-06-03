@@ -1,6 +1,6 @@
 bases:
 #- ../../../../.templates/service-mesh
-- ../../../../.templates/ci
+#- ../../../../.templates/ci
 - ../../../../.templates/container-registry
 
 # namePrefix: prod-
