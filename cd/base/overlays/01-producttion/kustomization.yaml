@@ -6,4 +6,4 @@ bases:
 # namePrefix: prod-
 commonLabels:
   tier: production
-  istio-injection: enabled
+  istio-injection: disabled
