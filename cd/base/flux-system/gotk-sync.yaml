@@ -25,3 +25,16 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: flux-system
+  namespace: flux-system
+spec:
+  interval: 0m10s
+  path: ./cd/base/overlays/01-producttion
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
