@@ -1,7 +1,7 @@
-bases:
+#bases:
 #- ../../../../.templates/service-mesh
 #- ../../../../.templates/ci
-- ../../../../.templates/container-registry
+#- ../../../../.templates/container-registry
 
 # namePrefix: prod-
 commonLabels:
