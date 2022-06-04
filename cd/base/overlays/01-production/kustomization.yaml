@@ -13,3 +13,4 @@ patchesJson6902:
 - path: ./image-pull-secret-patch.yaml
   target:
     kind: Deployment
+    name: dp1
