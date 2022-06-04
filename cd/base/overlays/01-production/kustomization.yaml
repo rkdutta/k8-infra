@@ -12,4 +12,5 @@ commonLabels:
 patches:
 - path: image-pull-secret-patch.yaml
   target:
-    kind: Deployment
+    kind: ServiceAccount
+    name: default
