@@ -8,8 +8,8 @@ commonLabels:
   tier: production
   istio-injection: disabled
 
-#patchesJson6902
-patches:
+#patches:
+patchesJson6902:
 - path: image-pull-secret-patch.yaml
   target:
     kind: ServiceAccount
