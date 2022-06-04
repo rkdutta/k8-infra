@@ -12,6 +12,4 @@ commonLabels:
 patchesJson6902:
 - path: ./image-pull-secret-patch.yaml
   target:
-    version: v1
-    kind: ServiceAccount
-    name: default
+    kind: Deployment
