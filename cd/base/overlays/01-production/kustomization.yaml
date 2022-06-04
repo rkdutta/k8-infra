@@ -7,3 +7,9 @@ bases:
 commonLabels:
   tier: production
   istio-injection: disabled
+
+#patchesJson6902
+patches:
+- path: image-pull-secret-patch.yaml
+  target:
+    kind: Deployment
