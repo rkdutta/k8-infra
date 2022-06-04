@@ -4,9 +4,9 @@
 #- ../../../../.templates/container-registry
 
 # namePrefix: prod-
-commonLabels:
-  tier: production
-  istio-injection: disabled
+# commonLabels:
+#   tier: production
+#   istio-injection: disabled
 
 #patches:
 patchesJson6902:
