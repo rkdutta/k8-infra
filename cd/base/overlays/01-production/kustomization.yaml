@@ -10,7 +10,7 @@ commonLabels:
 
 #patches:
 patchesJson6902:
-- path: image-pull-secret-patch.yaml
+- path: ./image-pull-secret-patch.yaml
   target:
     kind: ServiceAccount
     name: default
