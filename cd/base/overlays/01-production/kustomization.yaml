@@ -11,4 +11,4 @@ patchesJson6902:
   target:
     kind: Deployment
     name: ".*"
-    namespace: '.*'
+    namespace: ovr-01-production
