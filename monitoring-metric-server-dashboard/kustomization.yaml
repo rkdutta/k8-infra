@@ -1,5 +1,6 @@
 ---
 resources:
+- ./namespaces.yaml  
 - ./dashboard.yaml
 - ./metric-server-ha.yaml
 
