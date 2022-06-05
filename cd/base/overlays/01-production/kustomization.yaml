@@ -8,9 +8,9 @@ commonLabels:
   tier: production
   istio-injection: disabled
 
-# patchesJson6902:
-# - path: ./image-pull-secret-patch.yaml
-#   target:
-#     kind: Deployment
-#     name: "nginx"
-#     namespace: ovr-01-production
+patchesJson6902:
+- path: ./image-pull-secret-patch.yaml
+  target:
+    kind: Deployment
+    name: nginx
+    namespace: ovr-01-production
