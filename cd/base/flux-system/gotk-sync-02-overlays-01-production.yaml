@@ -5,7 +5,9 @@ metadata:
   name: 01-production
   namespace: flux-system
 spec:
-  interval: 10m0s
+  dependsOn:
+    - name: container-registry
+  interval: 1m0s
   path: ./cd/base/overlays/01-production
   prune: true
   sourceRef:

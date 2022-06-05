@@ -5,7 +5,9 @@ metadata:
   name: container-registry
   namespace: flux-system
 spec:
-  interval: 10m0s
+  dependsOn:
+    - name: flux-system
+  interval: 1m0s
   path: /.templates/container-registry
   prune: true
   sourceRef:
