@@ -5,3 +5,10 @@ resources:
 - ./permission.yaml
 
 namespace: 01-jenkins
+
+patchesJson6902:
+- path: ./image-pull-secret-patch.yaml
+  target:
+    kind: ServiceAccount
+    name: default
+    namespace: 01-jenkins
