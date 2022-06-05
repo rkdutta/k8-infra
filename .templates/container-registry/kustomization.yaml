@@ -2,6 +2,7 @@
 resources:
 - ./namespaces.yaml
 - ./pvc.yaml
+- ./pv.yaml
 - ./container-registry.yaml
 
 namespace: 04-container-registry
