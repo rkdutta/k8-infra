@@ -3,7 +3,7 @@ resources:
 - app.yaml
 
 namespace: ovr-01-production
-namePrefix: prod-
+#namePrefix: prod-
 commonLabels:
   tier: production
   istio-injection: disabled
