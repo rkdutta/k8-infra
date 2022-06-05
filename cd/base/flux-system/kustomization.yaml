@@ -10,6 +10,6 @@ resources:
 helmCharts:
 - name: kiali
   repo: https://kiali.org/helm-charts
-  version: 1.51
-#   releaseName: kiali-server
-#   namespace: kiali
+  version: "v1.51.0"
+  releaseName: kiali-server
+#  namespace: kiali
