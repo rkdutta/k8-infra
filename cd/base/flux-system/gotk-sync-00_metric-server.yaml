@@ -6,9 +6,9 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: flux-system
+    - name: container-registry
   interval: 1m0s
-  path: ./monitoring-metric-server-dashboard 
+  path: ./cd/base/overlays/01-production
   prune: true
   sourceRef:
     kind: GitRepository
