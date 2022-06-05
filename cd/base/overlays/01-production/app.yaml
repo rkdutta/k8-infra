@@ -1,9 +1,4 @@
 ---
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: default
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -24,7 +19,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: nginx
+      - image: container-registry:5000/nginx-private:latest
         name: nginx
         resources: {}
 status: {}
