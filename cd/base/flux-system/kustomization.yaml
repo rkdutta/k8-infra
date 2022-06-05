@@ -7,9 +7,9 @@ resources:
 - gotk-sync-02-overlays-01-production.yaml
 
 
-# helmCharts:
-# - name: kiali
-#   repo: https://kiali.org/helm-charts
-#   version: 1.51
+helmCharts:
+- name: kiali
+  repo: https://kiali.org/helm-charts
+  version: 1.51
 #   releaseName: kiali-server
 #   namespace: kiali
