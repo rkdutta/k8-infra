@@ -12,7 +12,7 @@ spec:
     matchLabels:
       app: container-registry
   strategy: {}
-  template:  
+  template:
     metadata:
       labels:
         app: container-registry
@@ -43,7 +43,7 @@ spec:
       volumes:
       - name: repo-vol
         persistentVolumeClaim:
-          claimName: container-registry-repo-pvc
+          claimName: container-registry-pvc
       - name: certs-vol
         secret:
           secretName: certs-secret
