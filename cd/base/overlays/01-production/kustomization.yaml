@@ -2,6 +2,7 @@ resources:
 - namespaces.yaml
 - app.yaml
 
+namespace: ovr-01-production
 namePrefix: prod-
 commonLabels:
   tier: production
