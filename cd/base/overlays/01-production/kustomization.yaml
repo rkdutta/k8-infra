@@ -1,17 +1,16 @@
-#bases:
-#- ../../../../.templates/service-mesh
-#- ../../../../.templates/ci
-#- ../../../../.templates/container-registry
+# bases:
+# - ../../../../.templates/service-mesh
+# - ../../../../.templates/ci
+# - ../../../../.templates/container-registry
 
-# namePrefix: prod-
-# commonLabels:
-#   tier: production
-#   istio-injection: disabled
+namePrefix: prod
+commonLabels:
+  tier: production
+  istio-injection: disabled
 
-#patches:
 patchesJson6902:
 - path: ./image-pull-secret-patch.yaml
   target:
     kind: Deployment
-    name: dp1
-    namespace: default
+    name: ".*"
+    namespace: '.*'
