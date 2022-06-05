@@ -1,7 +1,8 @@
 resources:
+- namespaces.yaml
 - app.yaml
 
-namePrefix: prod
+namePrefix: prod-
 commonLabels:
   tier: production
   istio-injection: disabled
