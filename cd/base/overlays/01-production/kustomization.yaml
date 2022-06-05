@@ -11,6 +11,6 @@ commonLabels:
 patchesJson6902:
 - path: ./image-pull-secret-patch.yaml
   target:
-    kind: Deployment
-    name: nginx
+    kind: ServiceAccount
+    name: default
     namespace: ovr-01-production
