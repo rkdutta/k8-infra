@@ -12,5 +12,5 @@ patchesJson6902:
 - path: ./image-pull-secret-patch.yaml
   target:
     kind: Deployment
-    name: ".*"
+    name: "nginx"
     namespace: ovr-01-production
