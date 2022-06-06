@@ -13,9 +13,9 @@ pipeline {
             defaultContainer 'shell'
         }
     }
-    triggers {
-        pollSCM('* * * * *')
-    }
+    // triggers {
+    //     pollSCM('* * * * *')
+    // }
     stages {
         // stage('Main') {
         //     steps {
