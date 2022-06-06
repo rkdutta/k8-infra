@@ -24,6 +24,7 @@ pipeline {
         stage('Main') {
             steps {
                 sh 'hostname'
+                sh 'apt install -y docker.io'
                 sh 'docker image ls'
             }
         }
