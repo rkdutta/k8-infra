@@ -25,6 +25,7 @@ pipeline {
         stage('Main') {
             steps {
                 sh 'hostname'
+                docker image ls
             }
         }
     }
