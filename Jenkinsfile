@@ -8,7 +8,7 @@ pipeline {
             spec:
               containers:
               - name: maven-build-agent
-                image: alpine:3.11
+                image: container-registry:5000/private-jdk-alpine
             '''
             defaultContainer 'shell'
         }
