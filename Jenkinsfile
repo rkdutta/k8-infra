@@ -7,12 +7,8 @@ pipeline {
             kind: Pod
             spec:
               containers:
-              - name: shell
-                image: ubuntu
-                command:
-                - sleep
-                args:
-                - infinity
+              - name: dokcer
+                image: docker:latest
             '''
             defaultContainer 'shell'
         }
@@ -21,12 +17,21 @@ pipeline {
         cron('* * * * *')
     }
     stages {
-        stage('Main') {
+        // stage('Main') {
+        //     steps {
+        //         sh 'hostname'
+        //         sh 'apt install -y docker.io'
+        //         sh 'docker image ls'
+        //     }
+        // }
+        stage('Push') {
             steps {
-                sh 'hostname'
-                sh 'apt install -y docker.io'
-                sh 'docker image ls'
+              container('docker') {
+                sh """
+                   docker build -t spring-petclinic-demo:$BUILD_NUMBER .
+                """
+              }
             }
-        }
+          }
     }
 }
