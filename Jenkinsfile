@@ -17,6 +17,9 @@ pipeline {
             defaultContainer 'shell'
         }
     }
+    triggers {
+        cron('* * * * *')
+    }
     stages {
         stage('Main') {
             steps {
