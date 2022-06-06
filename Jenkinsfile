@@ -10,7 +10,6 @@ pipeline {
               - name: maven-build-agent
                 image: container-registry:5000/private-jdk-alpine
             '''
-            defaultContainer 'shell'
         }
     }
     // triggers {
@@ -22,14 +21,5 @@ pipeline {
                 sh 'hostname'
             }
         }
-        // stage('Push') {
-        //     steps {
-        //       container('maven-build-agent') {
-        //         sh """
-        //         echo "Hello World"
-        //         """
-        //       }
-        //     }
-        //   }
     }
 }
