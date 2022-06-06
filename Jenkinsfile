@@ -17,21 +17,19 @@ pipeline {
     //     pollSCM('* * * * *')
     // }
     stages {
-        // stage('Main') {
-        //     steps {
-        //         sh 'hostname'
-        //         sh 'apt install -y docker.io'
-        //         sh 'docker image ls'
-        //     }
-        // }
-        stage('Push') {
+        stage('Main') {
             steps {
-              container('maven-build-agent') {
-                sh """
-                echo "Hello World"
-                """
-              }
+                sh 'hostname'
             }
-          }
+        }
+        // stage('Push') {
+        //     steps {
+        //       container('maven-build-agent') {
+        //         sh """
+        //         echo "Hello World"
+        //         """
+        //       }
+        //     }
+        //   }
     }
 }
