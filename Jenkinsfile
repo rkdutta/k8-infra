@@ -16,9 +16,9 @@ pipeline {
     //     pollSCM('* * * * *')
     // }
     stages {
-        stage('Main') {
+        stage('Build') {
             steps {
-                sh 'hostname'
+              git url: 'https://github.com/rkdutta/k8-notejam-code.git', branch: 'main'
             }
         }
     }
