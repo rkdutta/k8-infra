@@ -7,8 +7,8 @@ pipeline {
             kind: Pod
             spec:
               containers:
-              - name: dokcer
-                image: docker:latest
+              - name: maven-build-agent
+                image: alpine:3.11
             '''
             defaultContainer 'shell'
         }
@@ -26,9 +26,9 @@ pipeline {
         // }
         stage('Push') {
             steps {
-              container('docker') {
+              container('maven-build-agent') {
                 sh """
-                   docker build -t spring-petclinic-demo:$BUILD_NUMBER .
+                echo "Hello World"
                 """
               }
             }
