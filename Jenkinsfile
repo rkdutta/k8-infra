@@ -14,10 +14,6 @@ pipeline {
                 args:
                 - infinity
             '''
-            // Can also wrap individual steps:
-            // container('shell') {
-            //     sh 'hostname'
-            // }
             defaultContainer 'shell'
         }
     }
