@@ -1,0 +1,11 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageRepository
+metadata:
+  name: private-notejam
+  namespace: flux-system
+spec:
+  image: container-registry:5000/private-notejam
+  interval: 1m0s
+  secretRef:
+    name: reg-cred-secret
