@@ -9,3 +9,5 @@ spec:
   interval: 1m0s
   secretRef:
     name: reg-cred-secret
+  certSecretRef:
+    name: reg-cred-client-tls
