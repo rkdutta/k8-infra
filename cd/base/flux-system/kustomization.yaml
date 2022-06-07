@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync-00-base.yaml
-- gotk-sync-00-metric-server.yaml
+#- gotk-sync-00-metric-server.yaml
 - gotk-sync-00-ci.yaml
 - gotk-sync-01-container-registry.yaml
 - gotk-sync-02-overlays-01-production.yaml
