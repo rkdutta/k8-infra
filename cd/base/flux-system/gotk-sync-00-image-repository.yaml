@@ -22,5 +22,7 @@ spec:
   imageRepositoryRef:
     name: private-notejam
   policy:
-    semver:
-      range: '>=3'
+    numerical:
+      order: asc
+    # semver:
+    #   range: '>=3'
