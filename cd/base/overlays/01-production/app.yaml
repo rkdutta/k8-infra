@@ -19,7 +19,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - image: container-registry:5000/nginx-private:latest
+      - image: container-registry:5000/private-nginx:latest
         name: nginx
         resources: {}
 status: {}
