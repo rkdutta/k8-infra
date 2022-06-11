@@ -23,4 +23,4 @@ spec:
     name: private-notejam
   policy:
     semver:
-      range: '>=4'
+      range: '>=3'
