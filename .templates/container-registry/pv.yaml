@@ -10,4 +10,4 @@ spec:
   accessModes:
   - ReadWriteOnce
   hostPath:
-    path: /tmp/repository
+    path: /vagrant/GitHub/container-registry-local
