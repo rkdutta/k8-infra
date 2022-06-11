@@ -1,6 +1,8 @@
 ---
 resources:
 - ./sa.yaml
+- ./pv.yaml
+- ./pvc.yaml
 - ./namespaces.yaml
 - ./jenkins.yaml
 - ./permission.yaml
