@@ -19,7 +19,7 @@ spec:
         app: notejam
     spec:
       containers:
-      - image: container-registry:5000/private-notejam:5
+      - image: container-registry:5000/private-notejam:3
         name: notejam
         resources: {}
 status: {}

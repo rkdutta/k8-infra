@@ -11,3 +11,16 @@ spec:
     name: reg-cred-secret
   certSecretRef:
     name: local-registry-cert
+
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImagePolicy
+metadata:
+  name: private-notejam
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: private-notejam
+  policy:
+    semver:
+      range: '>=4'
