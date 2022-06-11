@@ -10,4 +10,4 @@ spec:
   secretRef:
     name: reg-cred-secret
   certSecretRef:
-    name: reg-cred-client-tls
+    name: local-registry-cert
