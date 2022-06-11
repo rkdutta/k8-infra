@@ -4,7 +4,7 @@ kind: PersistentVolume
 metadata:
   name: container-registry-pv
 spec:
-  persistentVolumeReclaimPolicy: Recycle
+  persistentVolumeReclaimPolicy: Retain
   capacity:
     storage: 2Gi
   accessModes:
