@@ -19,7 +19,7 @@ spec:
         app: notejam
     spec:
       containers:
-      - image: container-registry:5000/private-notejam:4  # {"$imagepolicy": "flux-system:private-notejam"}
+      - image: container-registry:5000/private-notejam:3  # {"$imagepolicy": "flux-system:private-notejam"}
         name: notejam
         resources: {}
 status: {}
