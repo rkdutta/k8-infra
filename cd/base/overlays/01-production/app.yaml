@@ -4,22 +4,22 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: nginx
-  name: nginx
+    app: notejam
+  name: notejam
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: notejam
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: nginx
+        app: notejam
     spec:
       containers:
-      - image: container-registry:5000/private-nginx:latest
-        name: nginx
+      - image: container-registry:5000/private-notejam:5
+        name: notejam
         resources: {}
 status: {}
