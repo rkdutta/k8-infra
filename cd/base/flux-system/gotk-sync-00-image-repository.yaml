@@ -48,5 +48,5 @@ spec:
     push:
       branch: main
   update:
-    path: ./clusters/my-cluster
+    path: ./cd/base/overlays/01-production
     strategy: Setters
