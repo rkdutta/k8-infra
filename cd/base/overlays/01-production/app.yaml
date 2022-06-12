@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,7 +18,7 @@ spec:
         app: notejam
     spec:
       containers:
-      - image: container-registry:5000/private-notejam:3  # {"$imagepolicy": "flux-system:private-notejam"}
+      - image: container-registry.04-container-registry:5000/private-notejam:6 # {"$imagepolicy": "flux-system:private-notejam"}
         name: notejam
         resources: {}
 status: {}
