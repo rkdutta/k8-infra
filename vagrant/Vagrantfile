@@ -16,7 +16,7 @@ boxes = [
     {
         :name => "loadbalancer",
         :os => BOX_COMMON_IMAGE,
-        :node_count => 0,
+        :node_count => 1,
         :mem => "1024",
         :cpu => "1",
         :ip_segment => 20,
@@ -43,7 +43,7 @@ boxes = [
     {
         :name => "worker",
         :os => BOX_COMMON_IMAGE,
-        :node_count => 0,
+        :node_count => 1,
         :mem => "2048",
         :cpu => "2",
         :ip_segment => 50,
