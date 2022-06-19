@@ -14,9 +14,9 @@ boxes = [
         :port_fwd_segment => 2730
     },
     {
-        :name => "lb",
+        :name => "loadbalancer",
         :os => BOX_COMMON_IMAGE,
-        :node_count => 1,
+        :node_count => 0,
         :mem => "1024",
         :cpu => "1",
         :ip_segment => 20,
@@ -25,7 +25,7 @@ boxes = [
     {
         :name => "etcd",
         :os => BOX_COMMON_IMAGE,
-        :node_count => 1,
+        :node_count => 0,
         :mem => "1024",
         :cpu => "2",
         :ip_segment => 30,
@@ -43,7 +43,7 @@ boxes = [
     {
         :name => "worker",
         :os => BOX_COMMON_IMAGE,
-        :node_count => 2,
+        :node_count => 0,
         :mem => "2048",
         :cpu => "2",
         :ip_segment => 50,
@@ -58,10 +58,13 @@ Vagrant.configure("2") do |config|
   config.vm.boot_timeout = BOX_TIMEOUT_IN_SECONDS
 
   hostFileEntries = ""
+  hostFileEntries_ansible = ""
   boxes.each do |opts|
+    hostFileEntries_ansible = hostFileEntries_ansible + "," + '[' + opts[:name] + 's]'
     (1..opts[:node_count]).each do |i|
         hostname = opts[:name] + "-" + "#{i}"
         hostFileEntries = hostFileEntries + "," + IP_NW + "#{opts[:ip_segment] + i}" + "   " + hostname
+        hostFileEntries_ansible =  hostFileEntries_ansible + "," + hostname
     end
   end
   boxes.each do |opts|
@@ -83,7 +86,7 @@ Vagrant.configure("2") do |config|
       		  s.args = ["enp0s8",hostFileEntries]
       		end
           node.vm.provision "setup-ssh-auth-from-ansible-controller", :type => "shell", :path => "setup-scripts/setup-ssh.sh" do |s|
-            s.args = ["ansible-1"]
+            s.args = ["ansible-1",hostFileEntries_ansible]
           end
           node.vm.provision "setup-dns", type: "shell", :path => "setup-scripts/update-dns.sh"
           node.vm.provision "setup-allow-bridge-nf-traffic", type: "shell", :path => "setup-scripts/allow-bridge-nf-traffic.sh"
