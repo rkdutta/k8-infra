@@ -64,7 +64,9 @@ Vagrant.configure("2") do |config|
     (1..opts[:node_count]).each do |i|
         hostname = opts[:name] + "-" + "#{i}"
         hostFileEntries = hostFileEntries + "," + IP_NW + "#{opts[:ip_segment] + i}" + "   " + hostname
-        hostFileEntries_ansible =  hostFileEntries_ansible + "," + hostname
+        if opts[:name] != "ansible"
+          hostFileEntries_ansible =  hostFileEntries_ansible + "," + hostname + " ansible_connection=ssh ansible=vagrant"
+        end
     end
   end
   boxes.each do |opts|
