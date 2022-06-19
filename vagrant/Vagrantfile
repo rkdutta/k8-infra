@@ -1,0 +1,94 @@
+IP_NW = "192.168.5."
+BOX_COMMON_IMAGE = "ubuntu/bionic64"
+BOX_TIMEOUT_IN_SECONDS = 600
+GUEST_PORT = 22
+
+boxes = [
+    {
+        :name => "ansible",
+        :os => BOX_COMMON_IMAGE,
+        :node_count => 1,
+        :mem => "1024",
+        :cpu => "1",
+        :ip_segment => 10,
+        :port_fwd_segment => 2730
+    },
+    {
+        :name => "lb",
+        :os => BOX_COMMON_IMAGE,
+        :node_count => 1,
+        :mem => "1024",
+        :cpu => "1",
+        :ip_segment => 20,
+        :port_fwd_segment => 2740
+    },
+    {
+        :name => "etcd",
+        :os => BOX_COMMON_IMAGE,
+        :node_count => 1,
+        :mem => "1024",
+        :cpu => "2",
+        :ip_segment => 30,
+        :port_fwd_segment => 2750
+    },
+    {
+        :name => "master",
+        :os => BOX_COMMON_IMAGE,
+        :node_count => 1,
+        :mem => "2048",
+        :cpu => "2",
+        :ip_segment => 40,
+        :port_fwd_segment => 2760
+    },
+    {
+        :name => "worker",
+        :os => BOX_COMMON_IMAGE,
+        :node_count => 2,
+        :mem => "2048",
+        :cpu => "2",
+        :ip_segment => 50,
+        :port_fwd_segment => 2770
+    }
+]
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = BOX_COMMON_IMAGE
+  config.vm.box_check_update = false
+  config.vm.boot_timeout = BOX_TIMEOUT_IN_SECONDS
+
+  hostFileEntries = ""
+  boxes.each do |opts|
+    (1..opts[:node_count]).each do |i|
+        hostname = opts[:name] + "-" + "#{i}"
+        hostFileEntries = hostFileEntries + "," + IP_NW + "#{opts[:ip_segment] + i}" + "   " + hostname
+    end
+  end
+  boxes.each do |opts|
+    (1..opts[:node_count]).each do |i|
+
+        config.vm.box = opts[:os]
+        hostname = opts[:name] + "-" + "#{i}"
+
+        config.vm.define hostname do |node|
+          node.vm.provider "virtualbox" do |vb|
+            vb.name = hostname
+            vb.memory = opts[:mem]
+            vb.cpus = opts[:cpu]
+          end
+          node.vm.hostname = hostname
+          node.vm.network :private_network, ip: IP_NW + "#{opts[:ip_segment] + i}"
+          node.vm.network "forwarded_port", guest: GUEST_PORT, host: "#{opts[:port_fwd_segment] + i}"
+      		node.vm.provision "setup-hosts", :type => "shell", :path => "setup-scripts/setup-hosts.sh" do |s|
+      		  s.args = ["enp0s8",hostFileEntries]
+      		end
+          node.vm.provision "setup-ssh-auth-from-ansible-controller", :type => "shell", :path => "setup-scripts/setup-ssh.sh" do |s|
+            s.args = ["ansible-1"]
+          end
+          node.vm.provision "setup-dns", type: "shell", :path => "setup-scripts/update-dns.sh"
+          node.vm.provision "setup-allow-bridge-nf-traffic", type: "shell", :path => "setup-scripts/allow-bridge-nf-traffic.sh"
+
+        end
+    end
+  end
+end
