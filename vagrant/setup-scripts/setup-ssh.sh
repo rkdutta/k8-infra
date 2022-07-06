@@ -8,8 +8,7 @@ echo $ANSIBLE_HOST_FILE_ENTRIES
 echo ">>>> `hostname` >>>> installing ansible"
 sudo apt update && sudo apt install -y ansible
 echo ">>>> `hostname` >>>> generating ssh keys"
-rm -f .ssh/id_rsa* && ssh-keygen -t rsa -b 4096 -q -f .ssh/id_rsa -N ''
-chown vagrant:vagrant .ssh/id_rsa*
+rm -f .ssh/id_rsa* && ssh-keygen -t rsa -b 4096 -q -f .ssh/id_rsa -N '' && chown vagrant:vagrant .ssh/id_rsa*
 
 if [[ `hostname` == $ANSIBLE_CONTROLLER ]]; then
   cp .ssh/id_rsa.pub /vagrant/.vagrant/machines/$ANSIBLE_CONTROLLER/virtualbox/

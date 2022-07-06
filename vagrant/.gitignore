@@ -1,10 +1,2 @@
-*.pem
-*.key
-*.csr
-*.crt
-*.kubeconfig
-
-.idea
-ubuntu-bionic*.log
+ci-local
 .vagrant
-temp
