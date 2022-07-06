@@ -1,2 +1,5 @@
 ci-local
 .vagrant
+*-console.log
+*.bk
+GitHub
