@@ -1,4 +1,14 @@
-- name: update DNS
+- name: update the apt package index
   shell: |
-     sed -i -e 's/#DNS=/DNS=8.8.8.8/' /etc/systemd/resolved.conf
-     service systemd-resolved restart
+    sudo apt-get update
+    sudo apt-get install -y apt-transport-https ca-certificates curl
+- name: download the Google Cloud public signing key
+  shell: |
+    curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+- name: installing kubeadm / kubelet / kubectl
+  shell: |
+    apt-get update
+    apt-get install -y kubelet kubeadm kubectl
+    apt-mark hold kubelet kubeadm kubectl

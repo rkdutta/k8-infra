@@ -1,9 +1,15 @@
 ---
-- name: Update web servers
+- name: Common Configuration
   hosts: all
+  strategy: free
   become: true
-#  remote_user: vagrant
   roles:
     - commons
     - containerd
-    
+
+- name: Configuring master and workers
+  hosts: masters,workers
+  strategy: free
+  become: true
+  roles:
+    - kubeadm
