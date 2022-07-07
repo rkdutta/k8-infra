@@ -1,0 +1,16 @@
+- name: install haproxy
+  apt:
+    name: haproxy
+    update_cache: yes
+    state: present
+- name: "Starting HAProxy service"
+  service:
+   name: "haproxy"
+   state: started
+
+- name: configration of haproxy.cfg file
+  template:
+          src: "files/haproxy.cfg"
+          dest: "/etc/haproxy/haproxy.cfg"
+  notify:
+          - Restart haproxy

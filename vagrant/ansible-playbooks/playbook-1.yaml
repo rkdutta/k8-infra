@@ -1,15 +1,22 @@
 ---
 - name: Common Configuration
-  hosts: all
+  hosts: loadbalancers
   strategy: free
   become: true
   roles:
     - commons
-    - containerd
+#     - containerd
+#
+# - name: Configuring master and workers
+#   hosts: masters,workers
+#   strategy: free
+#   become: true
+#   roles:
+#     - kubeadm
 
-- name: Configuring master and workers
-  hosts: masters,workers
+- name: Configuring haproxy
+  hosts: loadbalancers
   strategy: free
   become: true
   roles:
-    - kubeadm
+    - loadbalancer
