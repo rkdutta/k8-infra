@@ -5,14 +5,14 @@
   become: true
   roles:
     - commons
-#     - containerd
-#
-# - name: Configuring master and workers
-#   hosts: masters,workers
-#   strategy: free
-#   become: true
-#   roles:
-#     - kubeadm
+    - containerd
+
+- name: Configuring master and workers
+  hosts: masters,workers
+  strategy: free
+  become: true
+  roles:
+    - kubeadm
 
 - name: Configuring haproxy
   hosts: loadbalancers
