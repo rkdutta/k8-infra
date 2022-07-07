@@ -18,3 +18,8 @@
      mkdir -p /opt/cni/bin
      wget https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz
      tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.1.1.tgz
+
+- name: generate default config
+  shell: |
+     mkdir -p /etc/containerd
+     containerd config default > /etc/containerd/config.toml
