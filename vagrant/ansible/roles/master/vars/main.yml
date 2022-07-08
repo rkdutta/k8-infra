@@ -1,2 +1,5 @@
 ---
-# vars file for master
+apiserver_advertise_address: 192.168.5.41
+apiserver_bind_port: 6443
+pod_network_cidr: 10.244.0.0/16
+control_plane_endpoint: loadbalancer-1:6443
