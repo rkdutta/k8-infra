@@ -87,11 +87,13 @@ Vagrant.configure("2") do |config|
       		node.vm.provision "setup-hosts", :type => "shell", :path => "setup-scripts/setup-hosts-file-entries.sh" do |s|
       		  s.args = ["enp0s8",hostFileEntries]
       		end
+          node.vm.provision ">>>> install-ansible >>>>", type: "shell", :path => "setup-scripts/install-ansible.sh"
+
           if opts[:name] == 'ansible'
                   node.vm.provision "file", source: "ansible/ansible.cfg", destination: "/home/vagrant/"
                   node.vm.provision "shell", inline: "mv /home/vagrant/ansible.cfg /etc/ansible/"
           end
-          node.vm.provision ">>>> install-ansible >>>>", type: "shell", :path => "setup-scripts/install-ansible.sh"
+
           node.vm.provision "setup-ssh-auth-from-ansible-controller", :type => "shell", :path => "setup-scripts/setup-ssh.sh" do |s|
             s.args = ["ansible-1",hostFileEntries_ansible]
           end

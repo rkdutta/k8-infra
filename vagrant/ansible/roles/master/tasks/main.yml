@@ -1,6 +1,7 @@
 ---
 - name: install kubernetes
   shell: |
+    rm -f /home/vagrant/.kube/config
     kubeadm init --apiserver-advertise-address {{ apiserver_advertise_address }} --upload-certs --apiserver-bind-port {{ apiserver_bind_port }} --pod-network-cidr {{ pod_network_cidr }} --control-plane-endpoint {{ control_plane_endpoint }}
     mkdir -p /home/vagrant/.kube
     cp -i /etc/kubernetes/admin.conf /home/vagrant/.kube/config
