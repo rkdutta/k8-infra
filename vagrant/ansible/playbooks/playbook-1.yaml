@@ -20,3 +20,11 @@
   roles:
     - containerd
     - kubeadm
+
+- name: Configuring master with k8
+  hosts: masters
+  #strategy: free
+  become: true
+  remote_user: vagrant
+  roles:
+    - master

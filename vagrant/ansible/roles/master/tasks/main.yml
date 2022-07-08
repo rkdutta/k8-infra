@@ -1,0 +1,7 @@
+---
+- name: install kubernetes
+  shell: |
+    kubeadm init --apiserver-advertise-address 192.168.5.41 --upload-certs --apiserver-bind-port 6443 --pod-network-cidr 10.244.0.0/16 --control-plane-endpoint loadbalancer-1:6443
+    mkdir -p /home/vagrant/.kube
+    cp -i /etc/kubernetes/admin.conf /home/vagrant/.kube/config
+    chown vagrant:vagrant /home/vagrant/.kube/config

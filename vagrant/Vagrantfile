@@ -84,15 +84,17 @@ Vagrant.configure("2") do |config|
           node.vm.hostname = hostname
           node.vm.network :private_network, ip: IP_NW + "#{opts[:ip_segment] + i}"
           node.vm.network "forwarded_port", guest: GUEST_PORT, host: "#{opts[:port_fwd_segment] + i}"
-      		node.vm.provision "setup-hosts", :type => "shell", :path => "setup-scripts/setup-hosts.sh" do |s|
+      		node.vm.provision "setup-hosts", :type => "shell", :path => "setup-scripts/setup-hosts-file-entries.sh" do |s|
       		  s.args = ["enp0s8",hostFileEntries]
       		end
+          if opts[:name] == 'ansible'
+                  node.vm.provision "file", source: "ansible/ansible.cfg", destination: "/home/vagrant/"
+                  node.vm.provision "shell", inline: "mv /home/vagrant/ansible.cfg /etc/ansible/"
+          end
+          node.vm.provision ">>>> install-ansible >>>>", type: "shell", :path => "setup-scripts/install-ansible.sh"
           node.vm.provision "setup-ssh-auth-from-ansible-controller", :type => "shell", :path => "setup-scripts/setup-ssh.sh" do |s|
             s.args = ["ansible-1",hostFileEntries_ansible]
           end
-          #node.vm.provision "setup-dns", type: "shell", :path => "setup-scripts/update-dns.sh"
-          #node.vm.provision "setup-allow-bridge-nf-traffic", type: "shell", :path => "setup-scripts/allow-bridge-nf-traffic.sh"
-
         end
     end
   end
