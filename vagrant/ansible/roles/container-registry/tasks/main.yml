@@ -1,0 +1,3 @@
+---
+- name: configure CA certificates
+  script: files/generate-certificates.sh

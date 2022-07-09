@@ -1,2 +1,6 @@
 ---
-# tasks file for docker
+- name: install docker
+  apt:
+    name: docker.io
+    update_cache: yes
+    state: present
